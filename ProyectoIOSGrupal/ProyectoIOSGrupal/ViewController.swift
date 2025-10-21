@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         botonDescubrirPelis.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
         botonDescubrirPelis.titleLabel?.adjustsFontForContentSizeCategory = true
 
-
         
     }
 
