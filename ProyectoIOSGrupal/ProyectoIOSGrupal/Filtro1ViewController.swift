@@ -13,6 +13,7 @@ class Filtro1ViewController: UIViewController {
     @IBOutlet weak var botonSiguiente: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let VerResultadoPeliSegue = "showResultadoPelis"
+    let VerFiltro2Segue = "showFiltro2"
 
     @IBAction func showResultadoPelis(_ sender: UIButton) {
         print("ver pantalla Resultado pelis")

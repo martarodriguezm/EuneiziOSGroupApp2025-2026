@@ -121,11 +121,28 @@
                         <outlet property="tableView" destination="hAp-a6-27O" id="ODc-vJ-D3u"/>
                         <outlet property="textoFiltro1" destination="xL7-2w-Laa" id="Q8z-Bs-gLm"/>
                         <segue destination="MdS-7l-zvw" kind="show" identifier="showResultadoPelis" id="Ysa-un-LAt"/>
+                        <segue destination="EDy-ab-x76" kind="show" identifier="showFiltro2" id="ue0-jq-YIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnu-lY-1ht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="-207"/>
+            <point key="canvasLocation" x="1902" y="-180"/>
+        </scene>
+        <!--Filtro2-->
+        <scene sceneID="cfm-SY-tdu">
+            <objects>
+                <viewController title="Filtro2" id="EDy-ab-x76" customClass="Filtro2ViewController" customModule="ProyectoIOSGrupal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mqe-TC-QdT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RqG-ef-Gri"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2iS-i1-EcF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bnc-1M-1Ku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="603"/>
         </scene>
         <!--ResultadoPelis-->
         <scene sceneID="CPT-iW-4nl">
