@@ -19,6 +19,41 @@
         }
       }
     },
+    "botonSiguiente" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente"
+          }
+        }
+      }
+    },
+    "textoFiltro1" : {
+      "comment" : "Filtro1",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the type of movie you feel like watching. You can only choose one."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona el tipo de película que te apetece ver. Solo puedes elegir uno."
+          }
+        }
+      }
+    },
     "textoInicio" : {
       "comment" : "HomePage",
       "extractionState" : "manual",

@@ -11,7 +11,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textoInicio: UILabel!
     @IBOutlet weak var botonDescubrirPelis: UIButton!
+    let VerFiltro1Segue = "showFiltro1"
     
+    @IBAction func showFiltro1(_ sender: UIButton) {
+        print("ver pantalla filtro1")
+        self.performSegue(withIdentifier: VerFiltro1Segue, sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
