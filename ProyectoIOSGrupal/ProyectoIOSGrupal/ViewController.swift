@@ -9,9 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textoInicio: UILabel!
+    @IBOutlet weak var botonDescubrirPelis: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        textoInicio.text = "¿Otra vez sin saber qué ver? Deja que el destino elija."
+        
     }
 
 
