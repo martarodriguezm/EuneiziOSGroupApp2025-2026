@@ -15,7 +15,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textoInicio.text = "¿Otra vez sin saber qué ver? Deja que el destino elija."
+        textoInicio.text = String(localized: "textoInicio")
+        botonDescubrirPelis.setTitle(String(localized: "botonInicio"), for: .normal)
+        botonDescubrirPelis.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        botonDescubrirPelis.titleLabel?.adjustsFontForContentSizeCategory = true
+
+
         
     }
 

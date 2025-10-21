@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "botonInicio" : {
+      "comment" : "HomePage",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore Movies"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Descubrir Películas"
+          }
+        }
+      }
+    },
+    "textoInicio" : {
+      "comment" : "HomePage",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not sure what to watch? Let fate decide."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "¿Otra vez sin saber qué ver? Deja que el destino elija."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
