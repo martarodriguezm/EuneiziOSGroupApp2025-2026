@@ -37,6 +37,24 @@
         }
       }
     },
+    "anadirFav" : {
+      "comment" : "infoPeli",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to Favorites"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir a Favoritos"
+          }
+        }
+      }
+    },
     "botonInicio" : {
       "comment" : "HomePage",
       "extractionState" : "manual",

@@ -8,6 +8,9 @@
 import UIKit
 
 class ResultadoPelisViewController: UIViewController {
+    
+    let VerInfoPeliSegue = "showInfo"
+
     var generoRecibido: String?
 
         @IBOutlet weak var tituloResult: UILabel!
@@ -40,8 +43,8 @@ class ResultadoPelisViewController: UIViewController {
 
         // MARK: - Navigation
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "showFiltro2",
-               let detalleVC = segue.destination as? Filtro2ViewController,
+            if segue.identifier == VerInfoPeliSegue,
+               let detalleVC = segue.destination as? InfoPeliViewController,
                let pelicula = sender as? Pelicula {
                 detalleVC.pelicula = pelicula
             }
@@ -56,14 +59,14 @@ class ResultadoPelisViewController: UIViewController {
         }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "celdaPelicula", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "celdaResultado", for: indexPath)
             cell.textLabel?.text = peliculas[indexPath.row].title
             return cell
         }
 
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let peliculaSeleccionada = peliculas[indexPath.row]
-            performSegue(withIdentifier: "showDetallePelicula", sender: peliculaSeleccionada)
+            performSegue(withIdentifier: VerInfoPeliSegue, sender: peliculaSeleccionada)
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
