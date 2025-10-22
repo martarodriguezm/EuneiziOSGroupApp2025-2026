@@ -107,6 +107,23 @@
           }
         }
       }
+    },
+    "tituloResultado" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Results"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Resultados"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

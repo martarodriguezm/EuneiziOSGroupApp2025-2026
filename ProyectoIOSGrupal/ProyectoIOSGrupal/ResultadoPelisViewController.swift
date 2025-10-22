@@ -9,30 +9,61 @@ import UIKit
 
 class ResultadoPelisViewController: UIViewController {
     var generoRecibido: String?
-    
-    @IBOutlet weak var titulo1: UILabel!
-    @IBOutlet weak var titulo2: UILabel!
-    @IBOutlet weak var tiutlo3: UILabel!
-    
-        
-        
+
+        @IBOutlet weak var tituloResult: UILabel!
+        @IBOutlet weak var tablaResult: UITableView!
+
+        private let dataSource: PeliculasDataSourceProtocol = PeliculasJSONDataSource()
+        private var peliculas: [Pelicula] = [] // Guardamos las películas filtradas (máximo 3)
+
         override func viewDidLoad() {
             super.viewDidLoad()
+
+            tituloResult.text = String(localized: "tituloResultado")
             print("Género recibido: \(String(describing: generoRecibido))")
-            // Do any additional setup after loading the view.
+
+            // Configurar tabla
+            tablaResult.dataSource = self
+            tablaResult.delegate = self
+            tablaResult.register(UITableViewCell.self, forCellReuseIdentifier: "celdaPelicula")
+
+            // Cargar películas
+            guard let genero = generoRecibido else { return }
+            dataSource.fetchPeliculas(forGenero: genero) { [weak self] peliculas in
+                DispatchQueue.main.async {
+                    // Solo las 3 primeras
+                    self?.peliculas = Array(peliculas.prefix(3))
+                    self?.tablaResult.reloadData()
+                }
+            }
         }
-        
-        
-        
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
+
+        // MARK: - Navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "showFiltro2",
+               let detalleVC = segue.destination as? Filtro2ViewController,
+               let pelicula = sender as? Pelicula {
+                detalleVC.pelicula = pelicula
+            }
+        }
+    }
+
+    // MARK: - UITableViewDataSource y UITableViewDelegate
+    extension ResultadoPelisViewController: UITableViewDataSource, UITableViewDelegate {
+
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return peliculas.count
+        }
+
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "celdaPelicula", for: indexPath)
+            cell.textLabel?.text = peliculas[indexPath.row].title
+            return cell
+        }
+
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let peliculaSeleccionada = peliculas[indexPath.row]
+            performSegue(withIdentifier: "showDetallePelicula", sender: peliculaSeleccionada)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }

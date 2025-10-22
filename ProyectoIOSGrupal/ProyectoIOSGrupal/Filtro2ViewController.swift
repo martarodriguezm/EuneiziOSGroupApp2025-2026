@@ -8,6 +8,7 @@
 import UIKit
 
 class Filtro2ViewController: UIViewController {
+    var pelicula: Pelicula?
 
     override func viewDidLoad() {
         super.viewDidLoad()
