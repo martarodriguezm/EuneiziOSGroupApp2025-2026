@@ -16,6 +16,18 @@ class Filtro1ViewController: UIViewController {
     let VerFiltro2Segue = "showFiltro2"
 
     @IBAction func showResultadoPelis(_ sender: UIButton) {
+        // Comprobar si hay género seleccionado
+            guard let _ = generoSeleccionado else {
+                // No hay selección: mostrar alerta
+                let alert = UIAlertController(
+                            title: String(localized: "alertaTitulo"),
+                            message: String(localized: "alertaMensaje"),
+                            preferredStyle: .alert
+                        )
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alert, animated: true)
+                return
+            }
         print("ver pantalla Resultado pelis")
         self.performSegue(withIdentifier: VerResultadoPeliSegue, sender: self)
     }

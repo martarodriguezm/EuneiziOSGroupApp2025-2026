@@ -1,6 +1,42 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "alertaMensaje" : {
+      "comment" : "alerta",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please choose a genre before proceeding."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Por favor, selecciona un género antes de continuar."
+          }
+        }
+      }
+    },
+    "alertaTitulo" : {
+      "comment" : "alerta",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warning"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Atención"
+          }
+        }
+      }
+    },
     "botonInicio" : {
       "comment" : "HomePage",
       "extractionState" : "manual",

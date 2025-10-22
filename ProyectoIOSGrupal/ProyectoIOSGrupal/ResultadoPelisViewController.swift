@@ -9,23 +9,30 @@ import UIKit
 
 class ResultadoPelisViewController: UIViewController {
     var generoRecibido: String?
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("Género recibido: \(String(describing: generoRecibido))")
-        // Do any additional setup after loading the view.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var titulo1: UILabel!
+    @IBOutlet weak var titulo2: UILabel!
+    @IBOutlet weak var tiutlo3: UILabel!
+    
+        
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            print("Género recibido: \(String(describing: generoRecibido))")
+            // Do any additional setup after loading the view.
+        }
+        
+        
+        
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
     }
-    */
-
-}
