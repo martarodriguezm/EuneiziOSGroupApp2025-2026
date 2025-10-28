@@ -49,7 +49,7 @@ class PeliculasAPI {
                     }
 
                 case .failure(let error):
-                    print("❌ Error al obtener películas de la API:", error)
+                    print("Error al obtener películas de la API:", error)
                     completion(nil)
                 }
             }
