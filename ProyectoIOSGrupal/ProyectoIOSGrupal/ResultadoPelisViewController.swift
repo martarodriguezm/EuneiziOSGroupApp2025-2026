@@ -8,37 +8,61 @@
 import UIKit
 
 class ResultadoPelisViewController: UIViewController {
+    @IBOutlet weak var ResultadoPelis: UITableView!
     
     let VerInfoPeliSegue = "showInfo"
 
     var generoRecibido: String?
 
         @IBOutlet weak var tituloResult: UILabel!
-        @IBOutlet weak var tablaResult: UITableView!
-
+    @IBOutlet weak var tablaResult: UITableView!
         private let dataSource: PeliculasDataSourceProtocol = PeliculasJSONDataSource()
         private var peliculas: [Pelicula] = [] // Guardamos las películas filtradas (máximo 3)
 
         override func viewDidLoad() {
-            super.viewDidLoad()
-
-            tituloResult.text = String(localized: "tituloResultado")
-            print("Género recibido: \(String(describing: generoRecibido))")
-
-            // Configurar tabla
-            tablaResult.dataSource = self
-            tablaResult.delegate = self
-            tablaResult.register(UITableViewCell.self, forCellReuseIdentifier: "celdaPelicula")
-
             // Cargar películas
             guard let genero = generoRecibido else { return }
-            dataSource.fetchPeliculas(forGenero: genero) { [weak self] peliculas in
-                DispatchQueue.main.async {
-                    // Solo las 3 primeras
-                    self?.peliculas = Array(peliculas.prefix(3))
-                    self?.tablaResult.reloadData()
+
+            // 🔸 Diccionario de palabras clave más útiles para la API
+            let keywordsPorGenero = [
+                "Acción": "Mission",
+                "Comedia": "Funny",
+                "Drama": "Love",
+                "Terror": "Horror",
+                "Ciencia Ficción": "Future",
+                "Aventura": "Journey",
+                "Romance": "Heart"
+            ]
+
+            // Si el género tiene una palabra clave asignada, la usamos
+            let keyword = keywordsPorGenero[genero] ?? genero
+
+            print("🔍 Buscando películas en la API para el género: \(genero) (keyword: \(keyword))")
+
+            PeliculasAPI.shared.buscarPelicula(titulo: keyword) { [weak self] peliculaEncontrada in
+                guard let self = self else { return }
+
+                if let peliculaAPI = peliculaEncontrada {
+                    print("✅ Película obtenida desde API: \(peliculaAPI.title)")
+                    self.peliculas = [peliculaAPI] // solo 1 resultado de la API
+                    DispatchQueue.main.async {
+                        self.tablaResult.reloadData()
+                    }
+
+                } else {
+                    print("⚠️ No se encontraron películas en la API, cargando desde JSON local...")
+
+                    // Cargar desde JSON local como respaldo
+                    self.dataSource.fetchPeliculas(forGenero: genero) { peliculasLocales in
+                        DispatchQueue.main.async {
+                            self.peliculas = Array(peliculasLocales.prefix(3))
+                            self.tablaResult.reloadData()
+                        }
+                    }
                 }
             }
+
+            
         }
 
         // MARK: - Navigation

@@ -69,8 +69,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhh-O9-qTC">
+                                <rect key="frame" x="144.33333333333334" y="740.33333333333337" width="104.33333333333334" height="47.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showResultadoPelis:" destination="oNv-0R-FUU" eventType="touchUpInside" id="Nsd-zT-unp"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hAp-a6-27O">
-                                <rect key="frame" x="76" y="247.99999999999997" width="241" height="455.33333333333326"/>
+                                <rect key="frame" x="76" y="248" width="241" height="455.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celdaGenero" id="UvW-Bg-t0f">
@@ -87,16 +97,6 @@
                                     <outlet property="delegate" destination="oNv-0R-FUU" id="ItS-D3-oQ8"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhh-O9-qTC">
-                                <rect key="frame" x="144.33333333333334" y="740.33333333333337" width="104.33333333333334" height="47.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="showResultadoPelis:" destination="oNv-0R-FUU" eventType="touchUpInside" id="Nsd-zT-unp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZgQ-Wo-t9d"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,7 +194,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bPX-hB-1gs"/>
                     <connections>
-                        <outlet property="tablaResult" destination="O30-Lq-oSj" id="jS9-la-Re0"/>
+                        <outlet property="tablaResult" destination="O30-Lq-oSj" id="tXw-NC-goY"/>
                         <outlet property="tituloResult" destination="0el-TG-1hS" id="vjl-Oe-SFe"/>
                         <segue destination="Flm-yz-Lxn" kind="show" identifier="showInfo" id="Xwp-Zb-3wW"/>
                     </connections>
@@ -338,8 +338,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nIE-xr-uxg"/>
                     <connections>
-                        <outlet property="listaFav" destination="NsO-a3-Nvw" id="e0s-HR-tec"/>
-                        <outlet property="tablaResult" destination="NsO-a3-Nvw" id="uvz-Sp-W0l"/>
+                        <outlet property="tablaResult" destination="NsO-a3-Nvw" id="eDX-2h-cOj"/>
                         <outlet property="tituloResult" destination="LZt-g4-KLG" id="fzt-qR-ivf"/>
                     </connections>
                 </viewController>

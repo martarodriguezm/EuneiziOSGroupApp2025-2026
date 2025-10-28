@@ -12,4 +12,6 @@ struct Pelicula: Codable {
     let director: String
     let releaseDate: String
     let genres: [String]
+    let poster_path: String?
+    let overview: String
 }
