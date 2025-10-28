@@ -16,7 +16,6 @@ class ResultadoPelisViewController: UIViewController {
         @IBOutlet weak var tituloResult: UILabel!
         @IBOutlet weak var tablaResult: UITableView!
 
-        private let dataSource: PeliculasDataSourceProtocol = PeliculasJSONDataSource()
         private var peliculas: [Pelicula] = [] // Guardamos las películas filtradas (máximo 3)
 
         override func viewDidLoad() {
@@ -30,15 +29,13 @@ class ResultadoPelisViewController: UIViewController {
             tablaResult.delegate = self
             tablaResult.register(UITableViewCell.self, forCellReuseIdentifier: "celdaPelicula")
 
-            // Cargar películas
-            guard let genero = generoRecibido else { return }
-            dataSource.fetchPeliculas(forGenero: genero) { [weak self] peliculas in
-                DispatchQueue.main.async {
-                    // Solo las 3 primeras
-                    self?.peliculas = Array(peliculas.prefix(3))
-                    self?.tablaResult.reloadData()
-                }
+            if let genero = generoRecibido {
+                let gestor = CargarPeliculas()
+                // Obtener máximo 3 películas aleatorias de la categoría
+                peliculas = gestor.getPeliculas(forGenero: genero)
+                tablaResult.reloadData()
             }
+
         }
 
         // MARK: - Navigation
