@@ -15,6 +15,8 @@ class Filtro1ViewController: UIViewController {
     let VerResultadoPeliSegue = "showResultadoPelis"
     let VerFiltro2Segue = "showFiltro2"
 
+    
+    //Accion al clicar el boton
     @IBAction func showResultadoPelis(_ sender: UIButton) {
         // Comprobar si hay género seleccionado
             guard let _ = generoSeleccionado else {
@@ -39,7 +41,7 @@ class Filtro1ViewController: UIViewController {
         var generoSeleccionado: String?
         var generoSeleccionadoIndex: IndexPath?
     
-
+//Configurar textos
     override func viewDidLoad() {
         super.viewDidLoad()
         textoFiltro1.text = String(localized: "textoFiltro1")
@@ -61,23 +63,27 @@ class Filtro1ViewController: UIViewController {
         }
     
 }
-
+//extensiones para la tabla
 extension Filtro1ViewController: UITableViewDelegate, UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return generos.count
-    }
+    // Número de filas en la sección de la tabla
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return generos.count // Devuelve la cantidad de géneros disponibles
+    }
+    
+    // Configuración de cada celda de la tabla
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaGenero", for: indexPath)
-        let genero = generos[indexPath.row]
-        cell.textLabel?.text = genero
+        let genero = generos[indexPath.row] // Obtiene el género correspondiente a esta fila
+        cell.textLabel?.text = genero // Asigna el nombre del género a la etiqueta de la celda
 
         // Marcar solo el seleccionado
         cell.accessoryType = (indexPath == generoSeleccionadoIndex) ? .checkmark : .none
         return cell
     }
-
+    
+    // Se ejecuta cuando el usuario selecciona una fila
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Quitar el check anterior
         if let anterior = generoSeleccionadoIndex {

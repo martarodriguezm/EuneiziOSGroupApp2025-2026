@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 
+// Clase que representa un objeto "Favorito" en la base de datos Realm
 class Favorito: Object {
     @objc dynamic var title: String = ""
 }

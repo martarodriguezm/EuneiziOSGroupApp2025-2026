@@ -13,10 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var botonDescubrirPelis: UIButton!
     let VerFiltro1Segue = "showFiltro1"
     
+    //accion al pulsar el boton
     @IBAction func showFiltro1(_ sender: UIButton) {
         print("ver pantalla filtro1")
         self.performSegue(withIdentifier: VerFiltro1Segue, sender: self)
     }
+    
+    //Configurar los textos del label y boton
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +31,6 @@ class ViewController: UIViewController {
 
         
     }
-
 
 }
 

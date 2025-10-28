@@ -32,15 +32,16 @@ class InfoPeliViewController: UIViewController {
         
     }
     
+    //añadir a fav con feedback
     @IBAction func addBarBtAction(sender: UIBarButtonItem) {
         print("añadido a favorito")
        
         guard let peli = pelicula else { return }
         
         if !FavoritosManager.añadir(peli) {
-            mostrarAlerta(titulo: "Ya está", mensaje: "Esta película ya está en favoritos.")
+            mostrarAlerta(titulo: String(localized: "titulo_favorito_ya_esta"), mensaje: String(localized: "mensaje_favorito_ya_esta"))
         } else {
-            mostrarAlerta(titulo: "Añadido", mensaje: "Película añadida a favoritos.")
+            mostrarAlerta(titulo: String(localized: "titulo_favorito_añadido"), mensaje: String(localized: "pelisFavTitulo"))
         }
 
 /*

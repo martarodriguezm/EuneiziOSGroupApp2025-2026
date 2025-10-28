@@ -5,6 +5,7 @@
 //  Created by student on 22/10/25.
 //
 
+//structura de la pelicula
 import Foundation
 struct Pelicula: Codable, Equatable {
     let title: String

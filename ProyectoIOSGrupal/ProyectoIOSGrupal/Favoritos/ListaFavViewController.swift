@@ -18,12 +18,12 @@ class ListaFavViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tituloFav.text = "Películas favoritas"
+        tituloFav.text = String(localized: "pelisFavTitulo")
                 listaFav.dataSource = self
                 listaFav.delegate = self
     }
     
-    
+    //para actualizar cada vez que se entra en la pagina
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         favoritos = FavoritosManager.listar() // Cargar favoritos desde Realm
@@ -62,6 +62,7 @@ extension ListaFavViewController: UITableViewDataSource, UITableViewDelegate {
         return favoritos.count
     }
 
+    //cada fila de la tabla mostrará el título de una película favorita.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "celdaFav", for: indexPath)
         let peli = favoritos[indexPath.row]

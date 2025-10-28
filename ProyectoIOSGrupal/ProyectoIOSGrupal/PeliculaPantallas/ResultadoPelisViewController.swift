@@ -28,42 +28,50 @@ class ResultadoPelisViewController: UIViewController {
             tablaResult.dataSource = self
             tablaResult.delegate = self
             tablaResult.register(UITableViewCell.self, forCellReuseIdentifier: "celdaPelicula")
+            
 
+            // Si se ha recibido un género, cargamos las películas de esa categoría
             if let genero = generoRecibido {
-                let gestor = CargarPeliculas()
+                let gestor = CargarPeliculas() // Creamos una instancia de nuestro gestor de películas
                 // Obtener máximo 3 películas aleatorias de la categoría
                 peliculas = gestor.getPeliculas(forGenero: genero)
+                // Recargamos la tabla para mostrar los datos
                 tablaResult.reloadData()
             }
 
         }
 
-        // MARK: - Navigation
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == VerInfoPeliSegue,
                let detalleVC = segue.destination as? InfoPeliViewController,
                let pelicula = sender as? Pelicula {
+                
+                // Pasamos la película seleccionada al ViewController de info
                 detalleVC.pelicula = pelicula
             }
         }
     }
 
-    // MARK: - UITableViewDataSource y UITableViewDelegate
     extension ResultadoPelisViewController: UITableViewDataSource, UITableViewDelegate {
-
+        
+        // Número de filas de la tabla = número de películas filtradas
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return peliculas.count
         }
-
+        
+        // Configuración de cada celda de la tabla
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "celdaResultado", for: indexPath)
             cell.textLabel?.text = peliculas[indexPath.row].title
             return cell
         }
-
+        
+        // Acción al seleccionar una fila
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let peliculaSeleccionada = peliculas[indexPath.row]
-            performSegue(withIdentifier: VerInfoPeliSegue, sender: peliculaSeleccionada)
-            tableView.deselectRow(at: indexPath, animated: true)
+            
+            let peliculaSeleccionada = peliculas[indexPath.row] // Guardamos la película seleccionada
+            performSegue(withIdentifier: VerInfoPeliSegue, sender: peliculaSeleccionada) // Ejecutamos el segue hacia la pantalla de info con la película seleccionada
+            tableView.deselectRow(at: indexPath, animated: true) // Deseleccionamos la fila para que no quede marcada
+
         }
     }

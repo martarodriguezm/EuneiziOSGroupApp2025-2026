@@ -13,7 +13,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Por favor, selecciona un género antes de continuar."
           }
         }
@@ -31,7 +31,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Atención"
           }
         }
@@ -67,7 +67,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Descubrir Películas"
           }
         }
@@ -86,6 +86,60 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siguiente"
+          }
+        }
+      }
+    },
+    "mensaje_favorito_añadido" : {
+      "comment" : "infoPeli",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movie added to favorites."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Película añadida a favoritos."
+          }
+        }
+      }
+    },
+    "mensaje_favorito_ya_esta" : {
+      "comment" : "infoPeli",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This movie is already in favorites."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta película ya está en favoritos."
+          }
+        }
+      }
+    },
+    "pelisFavTitulo" : {
+      "comment" : "ListaFav",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite Movies"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peliculas Favoritas"
           }
         }
       }
@@ -120,13 +174,50 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "¿Otra vez sin saber qué ver? Deja que el destino elija."
           }
         }
       }
     },
+    "titulo_favorito_añadido" : {
+      "comment" : "infoPeli",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadido"
+          }
+        }
+      }
+    },
+    "titulo_favorito_ya_esta" : {
+      "comment" : "infoPeli",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Already added"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ya está"
+          }
+        }
+      }
+    },
     "tituloResultado" : {
+      "comment" : "ResultadoPeli",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -137,7 +228,7 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Resultados"
           }
         }
