@@ -1,11 +1,5 @@
-//
-//  Pelicula.swift
-//  ProyectoIOSGrupal
-//
-//  Created by student on 22/10/25.
-//
-
 import Foundation
+
 struct Pelicula: Codable {
     let title: String
     let description: String
@@ -13,5 +7,5 @@ struct Pelicula: Codable {
     let releaseDate: String
     let genres: [String]
     let poster_path: String?
-    let overview: String
+    let overview: String? // 🔹 ahora opcional para no romper el JSON local
 }
