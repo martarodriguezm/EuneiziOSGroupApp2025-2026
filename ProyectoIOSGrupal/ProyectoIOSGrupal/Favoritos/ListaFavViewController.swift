@@ -30,33 +30,11 @@ class ListaFavViewController: UIViewController {
         listaFav.reloadData()
     }
     
-    /*override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        listaFav.reloadData()
-    }*/
 
 }
 
 extension ListaFavViewController: UITableViewDataSource, UITableViewDelegate {
     
-    /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Favoritos.lista.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "celdaFav", for: indexPath)
-        let peli = Favoritos.lista[indexPath.row]
-        celda.textLabel?.text = peli.title
-        return celda
-    }
-
-    // Para permitir eliminar una peli al deslizar
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            Favoritos.eliminar(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-    }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoritos.count

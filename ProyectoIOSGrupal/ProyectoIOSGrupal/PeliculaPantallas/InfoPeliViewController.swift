@@ -44,13 +44,6 @@ class InfoPeliViewController: UIViewController {
             mostrarAlerta(titulo: String(localized: "titulo_favorito_añadido"), mensaje: String(localized: "pelisFavTitulo"))
         }
 
-/*
-            if Favoritos.lista.contains(where: { $0.title == peli.title }) {
-                mostrarAlerta(titulo: "Ya está", mensaje: "Esta película ya está en favoritos.")
-            } else {
-                _ = Favoritos.añadir(peli)
-                mostrarAlerta(titulo: "Añadido", mensaje: "Película añadida a favoritos.")
-            }*/
         }
 
         func mostrarAlerta(titulo: String, mensaje: String) {
