@@ -15,17 +15,39 @@ class InfoPeliViewController: UIViewController {
     
     
     @IBOutlet weak var botonPruebaLista: UIButton!
-    @IBOutlet weak var anio: UILabel!
-    @IBOutlet weak var director: UILabel!
+   
     @IBOutlet weak var titulo: UILabel!
+    @IBOutlet weak var descrip: UILabel!
+    @IBOutlet weak var anio: UILabel!
+    @IBOutlet weak var genero: UILabel!
+    @IBOutlet weak var stars: UILabel!
+    
+    @IBOutlet weak var imagen: UIImageView!
     
     var addBarBt: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titulo.text = pelicula?.title
-        //director.text = pelicula?.director
-       // anio.text = pelicula?.releaseDate
+        descrip.text = pelicula?.description
+        anio.text = pelicula != nil ? String(pelicula!.year) : ""
+        genero.text = pelicula?.genre
+        stars.text = pelicula != nil ? String(format: "%.1f", pelicula!.stars) : ""
+        
+        if let imageUrlString = pelicula?.imageUrl,
+           let url = URL(string: imageUrlString) {
+            
+            // Descargar la imagen en segundo plano
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data, let downloadedImage = UIImage(data: data) {
+                    // Actualizar la UI
+                    DispatchQueue.main.async {
+                        self.imagen.image = downloadedImage
+                    }
+                }
+            }.resume()
+        }
+       
         
         self.addBarBt = UIBarButtonItem.init(title: String(localized: "anadirFav"), style: .plain, target: self, action: #selector(self.addBarBtAction))
         self.navigationItem.rightBarButtonItem = self.addBarBt
