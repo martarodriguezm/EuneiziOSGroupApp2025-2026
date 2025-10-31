@@ -34,7 +34,9 @@ class Filtro1ViewController: UIViewController {
     }
 
     // Array de géneros (solo nombres)
-        let generos = ["Acción", "Comedia", "Drama", "Terror", "Romántica", "Ciencia ficción", "Aventura"]
+        //let generos = ["Acción", "Comedia", "Drama", "Terror", "Romántica", "Ciencia ficción", "Adventure"]
+    let generos = ["Action", "Comedy", "Drama", "Fantasy", "Biography", "Sci-Fi", "Adventure", "Crime"]
+
         
         // Guardamos el nombre seleccionado
         var generoSeleccionado: String?

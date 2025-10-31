@@ -24,8 +24,8 @@ class InfoPeliViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titulo.text = pelicula?.title
-        director.text = pelicula?.director
-        anio.text = pelicula?.releaseDate
+        //director.text = pelicula?.director
+       // anio.text = pelicula?.releaseDate
         
         self.addBarBt = UIBarButtonItem.init(title: String(localized: "anadirFav"), style: .plain, target: self, action: #selector(self.addBarBtAction))
         self.navigationItem.rightBarButtonItem = self.addBarBt

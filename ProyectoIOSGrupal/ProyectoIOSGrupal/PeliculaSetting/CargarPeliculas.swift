@@ -4,7 +4,7 @@
 //
 //  Created by student on 28/10/25.
 //
-
+/*
 import Foundation
 
 class CargarPeliculas {
@@ -54,3 +54,4 @@ class CargarPeliculas {
             return Array(filtradas.shuffled().prefix(maximo))
         }
 }
+*/
