@@ -56,10 +56,20 @@ class ResultadoPelisViewController: UIViewController {
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let pelis):
+                        print("Datos cargados desde la API")
                         self.todasPeliculas = pelis
                         self.filtrarPorGenero()
                     case .failure(let error):
                         print("Error al obtener posts:", error)
+                        print("Datos cargados desde JSON")
+                        // Si se ha recibido un género, cargamos las películas de esa categoría --> ahora hace falta poner self.
+                        if let genero = self.generoRecibido {
+                        let gestor = CargarPeliculas() // Creamos una instancia de nuestro gestor de películas
+                        // Obtener máximo 3 películas aleatorias de la categoría
+                            self.peliculas = gestor.getPeliculas(forGenero: genero)
+                        // Recargamos la tabla para mostrar los datos
+                            self.tablaResult.reloadData()
+                        }
                     }
                 }
             }
