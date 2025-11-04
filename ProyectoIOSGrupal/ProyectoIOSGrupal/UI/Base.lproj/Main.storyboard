@@ -32,32 +32,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh4-ye-SHf">
-                                <rect key="frame" x="159" y="622" width="75" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alt-je-8TB">
+                                <rect key="frame" x="159" y="714" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="VerFavoritos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NVT-ec-MIb"/>
+                                    <action selector="VerFavoritos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VbW-CB-9La"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Alt-je-8TB" firstAttribute="top" secondItem="dGg-xD-vrK" secondAttribute="bottom" constant="264" id="47E-RL-zFu"/>
                             <constraint firstItem="SPU-rN-mnn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B8P-j6-7Dh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Alt-je-8TB" secondAttribute="bottom" constant="69" id="Hd5-Vb-wzb"/>
                             <constraint firstItem="dGg-xD-vrK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KWD-jC-zm2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SPU-rN-mnn" secondAttribute="trailing" constant="60" id="NeQ-Gy-Zae"/>
-                            <constraint firstItem="Hh4-ye-SHf" firstAttribute="top" secondItem="dGg-xD-vrK" secondAttribute="bottom" constant="172" id="P7E-XI-bLT"/>
                             <constraint firstItem="SPU-rN-mnn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="Yn4-ri-kin"/>
                             <constraint firstItem="dGg-xD-vrK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aME-Ih-kA5"/>
-                            <constraint firstItem="Hh4-ye-SHf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eXP-Aw-wtV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hh4-ye-SHf" secondAttribute="bottom" constant="161" id="l5w-UW-Z0y"/>
                             <constraint firstItem="SPU-rN-mnn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="mYu-cR-spQ"/>
+                            <constraint firstItem="Alt-je-8TB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nc0-1L-s4t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yeC-dM-vay"/>
                     <connections>
-                        <outlet property="BotonFavoritos" destination="Hh4-ye-SHf" id="oyT-L8-jsi"/>
+                        <outlet property="BotonFavoritos" destination="Alt-je-8TB" id="l8I-g2-T6v"/>
                         <outlet property="botonDescubrirPelis" destination="dGg-xD-vrK" id="RBU-My-23D"/>
                         <outlet property="textoInicio" destination="SPU-rN-mnn" id="97A-L4-grE"/>
                         <segue destination="oNv-0R-FUU" kind="show" identifier="showFiltro1" id="kQN-sB-byS"/>
@@ -243,20 +243,12 @@
                                     <constraint firstAttribute="height" constant="208.33333333333326" id="Gha-Ln-PKu"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U4-mq-xAG">
-                                <rect key="frame" x="159" y="743" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
-                                <connections>
-                                    <action selector="irFav:" destination="Flm-yz-Lxn" eventType="touchUpInside" id="h3m-iu-Btz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bzR-xK-s08"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zyh-93-gg9" firstAttribute="top" secondItem="9sY-1B-8Cy" secondAttribute="bottom" constant="50" id="0YI-bS-mp3"/>
-                            <constraint firstItem="bzR-xK-s08" firstAttribute="trailing" secondItem="8U4-mq-xAG" secondAttribute="trailing" constant="159" id="5O9-Kh-Qsr"/>
+                            <constraint firstItem="bzR-xK-s08" firstAttribute="bottom" secondItem="NQ8-U0-QK4" secondAttribute="bottom" constant="113" id="5Xz-V3-aIH"/>
                             <constraint firstItem="NQ8-U0-QK4" firstAttribute="leading" secondItem="bzR-xK-s08" secondAttribute="leading" constant="93" id="CSL-Qt-onT"/>
                             <constraint firstItem="9sY-1B-8Cy" firstAttribute="leading" secondItem="bzR-xK-s08" secondAttribute="leading" constant="51" id="DG3-gt-ZXz"/>
                             <constraint firstItem="DKe-QG-aoZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bzR-xK-s08" secondAttribute="leading" constant="20" id="GVp-NB-fau"/>
@@ -264,10 +256,6 @@
                             <constraint firstItem="SbG-Jl-kvY" firstAttribute="leading" secondItem="bzR-xK-s08" secondAttribute="leading" constant="51" id="HEL-du-PU9"/>
                             <constraint firstItem="bzR-xK-s08" firstAttribute="bottom" secondItem="Pts-jH-lvN" secondAttribute="bottom" constant="695" id="PJH-vM-vda"/>
                             <constraint firstItem="Pts-jH-lvN" firstAttribute="top" secondItem="bzR-xK-s08" secondAttribute="top" id="RdS-Oh-jNu"/>
-                            <constraint firstItem="bzR-xK-s08" firstAttribute="bottom" secondItem="8U4-mq-xAG" secondAttribute="bottom" constant="40" id="Rts-Wh-clT"/>
-                            <constraint firstItem="8U4-mq-xAG" firstAttribute="leading" secondItem="bzR-xK-s08" secondAttribute="leading" constant="159" id="UGN-oZ-RwQ"/>
-                            <constraint firstItem="8U4-mq-xAG" firstAttribute="top" secondItem="NQ8-U0-QK4" secondAttribute="bottom" constant="38" id="UqE-gR-aNE"/>
-                            <constraint firstItem="8U4-mq-xAG" firstAttribute="top" secondItem="NQ8-U0-QK4" secondAttribute="bottom" constant="38" id="XOi-se-zya"/>
                             <constraint firstItem="DKe-QG-aoZ" firstAttribute="centerX" secondItem="bz2-Ri-peq" secondAttribute="centerX" id="cUa-NJ-hBN"/>
                             <constraint firstItem="bzR-xK-s08" firstAttribute="trailing" secondItem="SbG-Jl-kvY" secondAttribute="trailing" constant="10" id="cta-9Z-95e"/>
                             <constraint firstItem="bzR-xK-s08" firstAttribute="trailing" secondItem="zyh-93-gg9" secondAttribute="trailing" constant="10" id="dBN-3N-3pb"/>
@@ -286,13 +274,11 @@
                     <navigationItem key="navigationItem" id="1GR-e4-ph2"/>
                     <connections>
                         <outlet property="anio" destination="9sY-1B-8Cy" id="W8J-na-PwT"/>
-                        <outlet property="botonPruebaLista" destination="8U4-mq-xAG" id="gaI-bT-407"/>
                         <outlet property="descrip" destination="DKe-QG-aoZ" id="76X-JE-Q8I"/>
                         <outlet property="genero" destination="zyh-93-gg9" id="W9a-PM-uF8"/>
                         <outlet property="imagen" destination="NQ8-U0-QK4" id="6p7-hj-bac"/>
                         <outlet property="stars" destination="SbG-Jl-kvY" id="Egn-Eg-lL0"/>
                         <outlet property="titulo" destination="Pts-jH-lvN" id="EAo-Tt-1Hl"/>
-                        <segue destination="JNY-mu-x0S" kind="show" identifier="verFav" id="RyJ-Dl-tqu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="des-yO-0XD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -376,9 +362,6 @@
             <point key="canvasLocation" x="2807" y="549"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="RyJ-Dl-tqu"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

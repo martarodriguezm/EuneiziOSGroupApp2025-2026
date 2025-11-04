@@ -13,8 +13,6 @@ class InfoPeliViewController: UIViewController {
     var pelicula: Pelicula?
     
     
-    
-    @IBOutlet weak var botonPruebaLista: UIButton!
     @IBOutlet weak var titulo: UILabel!
     @IBOutlet weak var descrip: UILabel!
     @IBOutlet weak var anio: UILabel!
@@ -81,8 +79,4 @@ class InfoPeliViewController: UIViewController {
             present(alert, animated: true)
         }
     
-    @IBAction func irFav(_ sender: UIButton) {
-        performSegue(withIdentifier: "verFav", sender: self)
-
-    }
 }
