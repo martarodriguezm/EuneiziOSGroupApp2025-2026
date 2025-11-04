@@ -55,6 +55,23 @@
         }
       }
     },
+    "Anio" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Year"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Año"
+          }
+        }
+      }
+    },
     "botonInicio" : {
       "comment" : "HomePage",
       "extractionState" : "manual",
@@ -86,6 +103,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siguiente"
+          }
+        }
+      }
+    },
+    "Genero" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genre"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Genero"
           }
         }
       }
@@ -140,6 +174,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Peliculas Favoritas"
+          }
+        }
+      }
+    },
+    "Puntuacion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Puntuación"
           }
         }
       }
@@ -230,6 +281,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Resultados"
+          }
+        }
+      }
+    },
+    "VerFavoritos" : {
+      "comment" : "HomePage",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Favorites"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver Favoritos"
           }
         }
       }
